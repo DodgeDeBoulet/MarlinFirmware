@@ -2035,12 +2035,14 @@
       #endif
     #endif
     #define Y_MAX_POS 360
-    #if ENABLED(DDB_Custom)
-      #define ClipClearance 0
-    #elif ENABLED(SwissClips)
+    #if ENABLED(SwissClips)
       #define ClipClearance 5
     #else
-      #define ClipClearance 25
+      #if ENABLED(DDB_Custom)
+        #define ClipClearance 0
+      #else
+        #define ClipClearance 25
+      #endif
     #endif
   #elif ENABLED(MachineCR20)
     #define X_BED_SIZE 230
