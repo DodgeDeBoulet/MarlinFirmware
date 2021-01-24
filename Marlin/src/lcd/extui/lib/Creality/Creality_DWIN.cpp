@@ -1690,7 +1690,7 @@ SERIAL_ECHOLN(PSTR("BeginSwitch"));
 	recdat.head[0] = FHONE;
 	recdat.head[1] = FHTWO;
 }
-
+// Stubbed out for compatibility with bugfix-2.0.x - Dodge DeBoulet
 void onHomingStart()
 {
   // Called when starting G28
@@ -1726,6 +1726,7 @@ void onPrintFinished()
   // Called whhen print is finished
   SERIAL_ECHOLN("==onPrintFinished==");
 }
+// End stub-outs - Dodge DeBoulet
 
 void onPrinterKilled(PGM_P killMsg, PGM_P component) {
   SERIAL_ECHOLN("***kill***");
