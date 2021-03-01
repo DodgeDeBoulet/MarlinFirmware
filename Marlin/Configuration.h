@@ -512,13 +512,11 @@
  */
 
 #if ANY(SKR13,SKR14,SKR14Turbo,SKRPR011,SKRMINIE320) && ENABLED(GraphicLCD)
-  #if ANY(TFT70)
+  #ifdef TFT70
     #define BAUDRATE 250000
   #else
     #define BAUDRATE 115200
   #endif
-#else
-  #define BAUDRATE 250000
 #endif
 
 // Enable the Bluetooth serial interface on AT90USB devices
@@ -3359,6 +3357,7 @@
 //
 #if ANY(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) && (NONE(GraphicLCD,CR10_STOCKDISPLAY) || ANY(Force10SProDisplay, ForceCRXDisplay))
   #define EXTENSIBLE_UI
+  #define BAUDRATE 115200
 #endif
 
 #if ENABLED(EXTENSIBLE_UI)
